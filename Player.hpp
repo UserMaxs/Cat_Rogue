@@ -5,12 +5,12 @@
 
 class Player
 {
-public:
 	bool Cat_stands;
 	bool Died;
 	sf::Texture catTexture;
 	sf::Sprite cat;
 
+public:
 	Player();
 	void Draw(sf::RenderWindow* window);
 	void Run();

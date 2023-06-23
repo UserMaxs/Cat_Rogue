@@ -13,20 +13,19 @@ int main()
     while (window.isOpen())
     {
         sf::Event event;
-        while (window.pollEvent(event))
+        if (window.pollEvent(event))
         {
             if (event.type == sf::Event::Closed)
                 window.close();
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-                player.cat.move(1, 0);
         }
 
+        player.Walking();
 
         window.clear();
         player.Draw(&window);
         window.display();
 
-        this_thread::sleep_for(chrono::milliseconds(500));
+        this_thread::sleep_for(chrono::milliseconds(5));
     }
 
     return 0;
