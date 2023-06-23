@@ -2,40 +2,30 @@
 #include "Player.hpp"
 
 
-
-	
-class Player
+Player::Player()
 {
-	bool Cat_stands;
-	bool Died;
-	sf::Texture catTexture;
-	sf::Sprite cat;
-
-public:
-	Player()
+	catTexture.loadFromFile("source/cat.png");
+	cat.setTexture(catTexture);
+}
+void Player::Draw(sf::RenderWindow* window) 
+{
+	if (Died == false)
 	{
-		catTexture.loadFromFile("resources/cat.png");
-		cat.setTexture(catTexture);
+		window->draw(cat);
 	}
-	void Draw(sf::RenderWindow* window) 
-	{
-		if (Died == false)
-		{
-			window->draw(cat);
-		}
-	}
-	void Run()
-	{
+}
+void Player::Run()
+{
 
-	}
-	void Walking()
-	{
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) cat.move(0, 1.f);
-	}
-	void Fight()
-	{
+}
+void Player::Walking()
+{
+	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) cat.move(0.f, -1.f);
+	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) cat.move(-1.f, 0.f);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)); 
+	//if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) cat.move(1.f, 0.f);
+}
+void Player::Fight()
+{
 
-	}
-
-
-};
+}
