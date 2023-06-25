@@ -7,6 +7,7 @@ class Player
 {
 	bool Cat_stands;
 	bool Died;
+	bool Paws_empty;
 	sf::Texture catTexture;
 	sf::Sprite cat;
 

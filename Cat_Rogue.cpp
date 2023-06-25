@@ -2,12 +2,14 @@
 #include <thread>
 #include <chrono>
 #include "Player.hpp"
+#include "Map.hpp"
 
 using namespace std;
 
 int main()
 {
     Player player;
+    Map map;
 
     sf::RenderWindow window(sf::VideoMode(900, 600), "SFML works!");
     while (window.isOpen())
@@ -17,11 +19,13 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) window.close();
         }
 
         player.Walking();
 
         window.clear();
+        map.Draw(&window);
         player.Draw(&window);
         window.display();
 
